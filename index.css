@@ -1,0 +1,141 @@
+:root {
+  --color-primary: #002065; /* 主要顏色 */
+  --color-secondry: #0c3da5; /* 次要顏色 */
+
+  --bg-main: #ffffff; /* 主要背景 */
+  --bg-secondry: #143170; /* 次要背景*/
+
+  --text-primary: #2c3e50; /* 主要內文 */
+  --text-secondry: #6b7280; /* 次要內文 */
+  --text-inverse: #ffffff; /* 反白文字 */
+  --text-inverse-secondry: #5378c4;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 100px auto;
+  padding: 0 1.5rem;
+}
+h1 {
+  color: var(--color-primary);
+    font-size: 4rem;
+}
+h2 {
+  color: var(--color-secondry);
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+h3 {
+  font-size: 2rem;
+}
+p{
+  color:var(--text-primary)
+}
+header,
+footer {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--text-inverse);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4rem;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+/* ========================= */
+/* hero */
+/* ========================= */
+.hero {
+  width: 100%;
+  height: 100vh;
+  background-color: #bac9e5;
+  padding: 4rem;
+  display: flex;
+  align-items: center;
+justify-content: center;
+}
+.hero__container {
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.hero__context {
+  width: 50%;
+}
+.hero__context > h2 {
+  margin-bottom: 3rem;
+}
+.hero__context > p {
+  font-size: 1.3rem;
+  text-align: justify;
+}
+.hero__image-wrapper {
+  width: 400px;
+  height: 400px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.hero__avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* ========================= */
+/* skill */
+/* ========================= */
+
+.skill{
+
+}
+.skill__wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.skill__card{
+border: 2px solid blue;
+width: 30%;
+height: 450px;
+border-radius: 5%;
+display: flex;
+flex-direction: column;
+align-items: stretch;
+padding: 20px;
+}
+.skill__card h3{
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.skill__card-context{
+font-size: 1.5rem;
+display: flex;
+flex-direction: column;
+padding-left: 2rem;
+gap: 0.75rem;
+}
+
+
+/* ========================= */
+/* self */
+/* ========================= */
+
+.self p{
+  font-size: 1.2rem;
+  line-height: 2rem;
+  text-align: justify;
+}
