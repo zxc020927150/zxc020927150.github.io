@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
     <header>
@@ -30,7 +31,7 @@
             </p>
           </div>
           <div class="hero__image-wrapper">
-            <img class="hero__avatar" src="./public/me.jpg" alt="" />
+            <img class="hero__avatar" src="./public/me.jpg" alt="大頭貼" />
           </div>
         </div>
       </section>
@@ -68,17 +69,101 @@
       <section class="container self">
         <h2>自我介紹</h2>
         <p>
-          我曾在餐飲業累積六年的工作經驗，這段經歷讓我培養出以使用者需求為核心的思考方式。我相信，無論是提供一份餐點或設計一個網站，最終目的都是解決使用者的需求，並帶來良好的體驗。因此，在學習前端開發的過程中，我也始終以使用者角度思考介面設計與互動流程，希望打造兼具易用性與品質的產品。<br>
+          我曾在餐飲業累積六年的工作經驗，這段經歷讓我培養出以使用者需求為核心的思考方式。我相信，無論是提供一份餐點或設計一個網站，最終目的都是解決使用者的需求，並帶來良好的體驗。因此，在學習前端開發的過程中，我也始終以使用者角度思考介面設計與互動流程，希望打造兼具易用性與品質的產品。<br />
           餐飲工作也培養了我面對問題的能力。每天都可能遇到各種突發狀況，而我不只專注於當下的處理，更習慣追蹤問題成因、檢討流程並建立預防機制。我認為這與軟體開發中除錯的思維十分相似，修復
           Bug
-          只是第一步，更重要的是找出根本原因，持續優化流程與程式品質，提升系統的穩定性與效率。<br>
+          只是第一步，更重要的是找出根本原因，持續優化流程與程式品質，提升系統的穩定性與效率。<br />
           轉職的過程中，我持續投入技術的學習，熟悉
           HTML/CSS/JavaScript、React、Node.js、MySQL等技術，並透過實作專案累積開發經驗。我期待將過去累積的工作態度與問題解決能力，結合軟體開發技能，成為一位能夠發現並解決使用者問題的軟體工程師。
         </p>
       </section>
-      <section class="container">
+      <section class="container portfolio">
+        <button href="https://github.com/zxc020927150/Realicious">
+          <i class="fa-brands fa-github"></i>點我看更多
+        </button>
         <h2>作品集</h2>
-        <h3>Realicious</h3>
+        <div class="portfolio__wrapper">
+          <div class="portfolio__image-wrapper">
+            <img src="./public/Realicious.png" alt="網站截圖" />
+          </div>
+          <div class="portfolio__context">
+            <h3>食刻 - Realicious 美食評論網站</h3>
+            <p>
+              開發背景：本專案為 4人團隊 協作開發之前後端分離 Web 應用程式。<br />
+              主要目的：提供使用者瀏覽熱門餐廳、發表食記、在線討論交流、購買電子票券、記帳，並包含完整的會員權限管理系統。
+            </p>
+            <h4>
+              我主要負責 「 會員管理系統 」與「 多人線上聊天室 」 的設計與實作：
+            </h4>
+            <ol class="portfolio__list">
+              <li>
+                會員身分驗證與安全機制：
+                <ul>
+                  <li>採用 JWT 認證機制 管理會員登入狀態與權限控管。</li>
+                  <li>使用 bcrypt 實現密碼雜湊加密，確保使用者憑證安全</li>
+                </ul>
+              </li>
+              <li>
+                即時聊天室：
+                <ul>
+                  <li>
+                    使用 Web Socket
+                    的技術做到即時訊息推播、頻道劃分、以及連線狀態管理 ( 採用
+                    Socket.io 套件 )
+                  </li>
+                </ul>
+              </li>
+              <li>
+                API 規劃與實作：
+                <ul>
+                  <li>設計完整會員系統、聊天室 API 。</li>
+                </ul>
+              </li>
+              <li>
+                資料庫 Schema 設計：
+                <ul>
+                  <li>
+                    規劃會員及聊天室相關資料表結構，並確立與其他區塊（如文章/購物）的關聯。
+                  </li>
+                </ul>
+              </li>
+              <li>
+                Prisma ORM：
+                <ul>
+                  <li>使用 Prisma 來管理資料表，並建立測試假資料 seed。</li>
+                </ul>
+              </li>
+              <li>
+                第三方登入：
+                <ul>
+                  <li>使用者可用 google 帳號進行登入</li>
+                </ul>
+              </li>
+              <li>
+                自訂大頭貼：
+                <ul>
+                  <li>可選擇預設可愛小雞圖片或是自行上傳大頭貼</li>
+                  <li>google 登入自動代入 google 帳號大頭貼</li>
+                </ul>
+              </li>
+              <li>
+                響應式網頁設計：
+                <ul>
+                  <li>負責登入頁、註冊流程、會員中心、聊天室、側邊欄的設計</li>
+                </ul>
+              </li>
+              <li>
+                email驗證：
+                <ul>
+                  <li>
+                    註冊或忘記密碼時，需驗證 email，使用 nodemailer
+                    套件發送驗證信件
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </div>
       </section>
       <section class="container">
         <h2>經歷</h2>
