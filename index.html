@@ -5,18 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resume</title>
     <link rel="stylesheet" href="./index.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+      integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
       <nav>
-        <span>自我介紹</span>
-        <span>技術</span>
-        <span>作品集</span>
+        <span class="" data-target="skill">技術</span>
+        <span data-target="self">自我介紹</span>
+        <span data-target="portfolio">作品集</span>
+        <span data-target="experience">經歷</span>
       </nav>
     </header>
     <main>
-      <section class="hero">
+      <section class="hero" id="hero">
         <div class="hero__container">
           <div class="hero__context">
             <h3>你好 我是</h3>
@@ -35,7 +42,7 @@
           </div>
         </div>
       </section>
-      <section class="container skill">
+      <section class="container skill" id="skill">
         <h2>技術</h2>
         <div class="skill__wrapper">
           <div class="skill__card">
@@ -66,7 +73,7 @@
           </div>
         </div>
       </section>
-      <section class="container self">
+      <section class="container self" id="self">
         <h2>自我介紹</h2>
         <p>
           我曾在餐飲業累積六年的工作經驗，這段經歷讓我培養出以使用者需求為核心的思考方式。我相信，無論是提供一份餐點或設計一個網站，最終目的都是解決使用者的需求，並帶來良好的體驗。因此，在學習前端開發的過程中，我也始終以使用者角度思考介面設計與互動流程，希望打造兼具易用性與品質的產品。<br />
@@ -77,7 +84,7 @@
           HTML/CSS/JavaScript、React、Node.js、MySQL等技術，並透過實作專案累積開發經驗。我期待將過去累積的工作態度與問題解決能力，結合軟體開發技能，成為一位能夠發現並解決使用者問題的軟體工程師。
         </p>
       </section>
-      <section class="container portfolio">
+      <section class="container portfolio" id="portfolio">
         <button href="https://github.com/zxc020927150/Realicious">
           <i class="fa-brands fa-github"></i>點我看更多
         </button>
@@ -165,10 +172,70 @@
           </div>
         </div>
       </section>
-      <section class="container">
+      <section class="container experience" id="experience">
         <h2>經歷</h2>
+        <div class="experience__wrapper">
+          <div class="experience__image-wrapper">
+            <img src="./public/ispan.png" alt="" />
+          </div>
+          <div class="experience__context">
+            <h4>
+              資展國際(原資策會) <br />
+              第74期 前端工程師就業養成班 498小時
+            </h4>
+            <p>
+              專案名稱：Realicious<br />
+              專案內容：美食評論網站，讓使用者可以發表文章評論美食，也可以在聊天室線上即時討論聊天，可購買美食商品卷<br />
+              負責項目：完整會員功能、即時線上聊天室
+            </p>
+          </div>
+          <div class="experience__period">2026/3~2026/8（6個月）</div>
+        </div>
+        <div class="experience__wrapper">
+          <div class="experience__image-wrapper">
+            <img src="./public/menu.png" alt="" />
+          </div>
+          <div class="experience__context">
+            <h4>阿鑾快炒</h4>
+            <p>
+              公司介紹：家族經營之傳統小吃店，販售炒飯、炒麵、乾麵、滷肉飯等等中式餐點，以及家常快炒、小菜、湯品。<br />
+              工作內容：主要工作內容是食材前置處理、餐點製作、點餐收銀、服務客人等等。
+              <br />
+              擔任職務：平常在團隊裡擔任控場的角色，協助團隊在尖峰時段有效率的服務客人，提升顧客滿意度。
+            </p>
+          </div>
+          <div class="experience__period">2026/3~2026/8（約1年）</div>
+        </div>
+        <div class="experience__wrapper">
+          <div class="experience__image-wrapper">
+            <img src="./public/noodle.jpg" alt="" style="object-fit: fill;" />
+          </div>
+          <div class="experience__context">
+            <h4>小眷村牛肉麵 昌平店</h4>
+            <p>
+              公司介紹：在台中的連鎖牛肉麵店，以眷村口味為特色，目前有四間分店<br />
+              工作內容：主要是內場食材前置處理、餐點製作，但實際上團隊是分工合作的需要互相支援，因此也需要服務客人<br />
+              擔任職務：此分店是小眷村牛肉麵的中央廚房，大部分需長時間製作的產品，會先製成半成品之後再交由分店處理，我負責中央廚房的工作，此崗位需具有責任感，以及對品質有要求。
+            </p>
+          </div>
+          <div class="experience__period">2021/8~2025/3（3年8個月）</div>
+        </div>
+        <div class="experience__wrapper">
+          <div class="experience__image-wrapper">
+            <img src="./public/silks.jpg" alt="" />
+          </div>
+          <div class="experience__context">
+            <h4>蘭城晶英酒店 百匯自助餐廳</h4>
+            <p>
+              職位：廚房助手<br />
+              工作內容：食材前置處理、餐點製作<br />
+            </p>
+          </div>
+          <div class="experience__period">2020/11~2021/6（8個月）</div>
+        </div>
       </section>
     </main>
     <footer>聯絡方式</footer>
+    <script src="./index.js"></script>
   </body>
 </html>
