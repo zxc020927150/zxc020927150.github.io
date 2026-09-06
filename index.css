@@ -15,6 +15,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  scroll-padding-top: 4rem;
+  scroll-behavior: smooth;
+}
 .container {
   max-width: 1280px;
   width: 100%;
@@ -33,7 +37,7 @@ h2 {
 h3 {
   font-size: 2rem;
 }
-h4{
+h4 {
   font-size: 1.6rem;
 }
 p {
@@ -49,15 +53,24 @@ footer {
   align-items: center;
   height: 4rem;
 }
+/* ========================= */
+/* header */
+/* ========================= */
+header {
+  position: fixed;
+  z-index: 10;
+}
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-span{
+nav a {
+  text-decoration: none;
+  color: white;
   padding: 20px 40px;
 }
-.navspan__mouseover{
+nav a:hover {
   transform: scale(1.3);
   transition: 0.1s;
 }
@@ -114,7 +127,7 @@ span{
   align-items: center;
 }
 .skill__card {
-  border: 2px solid blue;
+  border: 1px solid var(--color-secondry);
   width: 30%;
   height: 450px;
   border-radius: 5%;
@@ -122,6 +135,22 @@ span{
   flex-direction: column;
   align-items: stretch;
   padding: 20px;
+  box-shadow: 3px 3px 5px var(--color-primary);
+  opacity: 0;
+  transform: translateY(100px);
+  transition:
+    opacity 1s ease-out,
+    transform 1.5s ease-out;
+}
+.skill__card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.skill__card:nth-child(2) {
+  transition-delay: 0.3s;
+}
+.skill__card:nth-child(3) {
+  transition-delay: 0.6s;
 }
 .skill__card > h3 {
   text-align: center;
@@ -148,19 +177,23 @@ span{
 /* ========================= */
 /* portfolio */
 /* ========================= */
-.portfolio{
+.portfolio {
   position: relative;
 }
-.portfolio > button{
-position: absolute;
-right: 5%;
-bottom:5% ;
-width: 100px;
-height: 30px;
-background-color: var(--color-secondry);
-color: var(--text-inverse);
-
+.portfolio > a {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  background-color: var(--color-secondry);
+  color: var(--text-inverse);
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
 }
+.portfolio > a:hover {
+  background-color: var(--color-primary);
+}
+
 .portfolio__wrapper {
   width: 100%;
   height: 800px;
@@ -178,10 +211,10 @@ color: var(--text-inverse);
   object-fit: cover;
   object-position: center;
 }
-.portfolio__context{
+.portfolio__context {
   padding: 0 30px;
   line-height: 1.6rem;
-  border-right:5px solid var(--color-secondry);
+  border-right: 5px solid var(--color-secondry);
 }
 .portfolio__context > h3 {
   padding: 20px 0;
@@ -192,8 +225,8 @@ color: var(--text-inverse);
 .portfolio__list {
   list-style-position: inside;
 }
-.portfolio__list > li{
-margin-bottom: 5px;
+.portfolio__list > li {
+  margin-bottom: 5px;
 }
 .portfolio__list > li > ul {
   list-style-type: disc;
@@ -203,40 +236,40 @@ margin-bottom: 5px;
 /* ========================= */
 /* exprience */
 /* ========================= */
-.experience{
+.experience {
   display: flex;
   flex-direction: column;
 }
-.experience__wrapper{
+.experience__wrapper {
   display: flex;
   justify-content: space-between;
   padding-bottom: 30px;
   margin-bottom: 50px;
   border-bottom: 1px solid black;
 }
-.experience__image-wrapper{
+.experience__image-wrapper {
   border: 1px solid black;
   width: 300px;
   height: 200px;
   box-shadow: 3px 3px 5px gray;
 }
-.experience__image-wrapper img{
+.experience__image-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
 }
-.experience__context{
+.experience__context {
   flex: 1;
-  margin-left:30px;
+  margin-left: 30px;
   margin-top: 20px;
 }
-.experience__context h4{
-  margin-bottom:20px ;
+.experience__context h4 {
+  margin-bottom: 20px;
 }
-.experience__context p{
-line-height: 1.5rem;
+.experience__context p {
+  line-height: 1.5rem;
 }
-.experience__period{
+.experience__period {
   font-weight: 500;
 }
