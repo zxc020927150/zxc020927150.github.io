@@ -35,3 +35,21 @@ const skill_show = () => {
   });
 };
 skill_show();
+
+
+// 卡片進入視野，會縮小
+// 抓多個元素 對多個元素做變化
+const experience_wrapper = () => {
+  const wrappers = document.querySelectorAll(".experience__wrapper");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  });
+  wrappers.forEach((wrapper) => {
+    observer.observe(wrapper);
+  });
+};
+experience_wrapper();

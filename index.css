@@ -15,7 +15,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-html{
+html {
   scroll-padding-top: 4rem;
   scroll-behavior: smooth;
 }
@@ -77,6 +77,16 @@ nav a:hover {
 /* ========================= */
 /* hero */
 /* ========================= */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
 .hero {
   width: 100%;
   height: 100vh;
@@ -96,8 +106,15 @@ nav a:hover {
 .hero__context {
   width: 50%;
 }
+.hero__context > h3 {
+  animation: slideIn 0.8s ease-out both;
+}
+.hero__context > h1 {
+  animation: slideIn 0.8s ease-out 0.6s both;
+}
 .hero__context > h2 {
   margin-bottom: 3rem;
+  animation: slideIn 0.8s ease-out 1.2s both;
 }
 .hero__context > p {
   font-size: 1.3rem;
@@ -246,6 +263,15 @@ nav a:hover {
   padding-bottom: 30px;
   margin-bottom: 50px;
   border-bottom: 1px solid black;
+  opacity: 0;
+  transform: translateY(100px);
+  transition:
+    opacity 1s ease-out,
+    transform 2s ease-out;
+}
+.experience__wrapper.show {
+  opacity: 1;
+  transform: translateY(0px);
 }
 .experience__image-wrapper {
   border: 1px solid black;
