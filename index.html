@@ -14,14 +14,30 @@
     />
   </head>
   <body>
-    <!-- <div class="test__line"></div> -->
     <header>
-      <nav>
-        <a href="#skill"><span>技術</span></a>
-        <a href="#self"><span>自我介紹</span></a>
-        <a href="#portfolio"><span>作品集</span></a>
-        <a href="#experience"><span>經歷</span></a>
+      <nav class="nav">
+        <ul class="nav__menu" id="nav-menu">
+          <li class="nav__item">
+            <a class="nav__link" href="#skill">技術</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#self">自我介紹</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#portfolio">作品集</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#experience">經歷</a>
+          </li>
+        </ul>
       </nav>
+      <button
+        class="nav__toggle"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </header>
     <main>
       <section class="hero" id="hero">
@@ -86,7 +102,11 @@
         </p>
       </section>
       <section class="container portfolio" id="portfolio">
-        <a href="https://github.com/zxc020927150/Realicious" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/zxc020927150/Realicious"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <i class="fa-brands fa-github"></i> 點我看更多
         </a>
         <h2>作品集</h2>
@@ -209,7 +229,7 @@
         </div>
         <div class="experience__wrapper">
           <div class="experience__image-wrapper">
-            <img src="./public/noodle.jpg" alt="" style="object-fit: fill;" />
+            <img src="./public/noodle.jpg" alt="" style="object-fit: fill" />
           </div>
           <div class="experience__context">
             <h4>小眷村牛肉麵 昌平店</h4>

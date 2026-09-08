@@ -1,8 +1,9 @@
 //nav 進入到該區塊會顯示正在哪個區塊
 const nav_into = () => {
   const sections = document.querySelectorAll("section"); //觀察對象們
-  const navlinks = document.querySelectorAll("nav a"); //修改對象們
-  const navlinks_span = document.querySelectorAll("nav a span"); //修改對象們
+  const nav__links = document.querySelectorAll(".nav__link"); //修改對象們
+  const nav__items = document.querySelectorAll(".nav__item"); //修改對象們
+
   const observer = new IntersectionObserver(
     (entries) => {
       const visible = entries.filter(
@@ -17,24 +18,27 @@ const nav_into = () => {
           ? entry
           : closest,
       );
-
       const id = current.target.id;
-      const currentlink = document.querySelector(`nav a[href="#${id}"]`); //找到正確修改對象
-      const currentlink_sapn = document.querySelector(`nav a[href="#${id}"] span`); //找到正確修改對象
-
-      navlinks.forEach((navlink) => {
-        navlink.classList.remove("nav_a");
-      }); // 先清空
-      navlinks_span.forEach((navlink) => {
-        navlink.classList.remove("nav_a_span");
-      }); // 先清空
-
-      if (currentlink) {
-        currentlink.classList.add("nav_a");
-      } // 不是每個區域都有對應的 nav a 有的才新增
-      if (currentlink_sapn) {
-        currentlink_sapn.classList.add("nav_a_span");
-      } // 不是每個區域都有對應的 nav a span 有的才新增
+      // 更改字體大小
+      const current_link = document.querySelector(`.nav__item a[href="#${id}"]`); //找到正確修改對象
+      nav__links.forEach((nav__link) => {
+        nav__link.classList.remove("into");
+      });
+      if (current_link) {
+        current_link.classList.add("into");
+      }
+      // 更改背景
+      nav__items.forEach((nav__item) => {
+        nav__item.classList.remove("bg");
+      });
+      if(current_link){
+        const current_item = current_link.closest(".nav__item")
+      if (current_item) {
+        current_item.classList.add("bg");
+      }
+      }
+      
+    
     },
     { rootMargin: "-40% 0px -60% 0px" }, //觸發範圍
   );
@@ -43,6 +47,19 @@ const nav_into = () => {
   });
 };
 nav_into();
+
+//漢堡選單
+const navbar = () => {
+  const toggle = document.querySelector(".nav__toggle");
+  const menu = document.querySelector(".nav__menu");
+  toggle.addEventListener("click", () => {
+    menu.classList.toggle("isOpen");
+    menu.classList.contains("isOpen")
+      ? toggle.setAttribute("aria-expanded", true)
+      : toggle.setAttribute("aria-expanded", false);
+  });
+};
+navbar();
 
 // skill區塊效果
 const skill_show = () => {

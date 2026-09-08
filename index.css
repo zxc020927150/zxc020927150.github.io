@@ -22,26 +22,28 @@ html {
 .container {
   max-width: 1280px;
   width: 100%;
-  margin: 100px auto;
+  margin: clamp(3rem, 8vw, 6rem) auto;
   padding: 0 1.5rem;
 }
 h1 {
   color: var(--color-primary);
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 1.878rem + 2.652vi, 4rem);
 }
 h2 {
   color: var(--color-secondry);
-  font-size: 3rem;
-  margin-bottom: 2rem;
+  font-size: clamp(2rem, 1.586rem + 1.768vi, 3rem);
+  margin-bottom: clamp(1rem, 0.586rem + 1.768vi, 2rem);
 }
 h3 {
-  font-size: 2rem;
+  font-size: clamp(1.6rem, 1.434rem + 0.707vi, 2rem);
 }
 h4 {
-  font-size: 1.6rem;
+  font-size: clamp(1.2rem, 1.034rem + 0.707vi, 1.6rem);
 }
 p {
   color: var(--text-primary);
+  /* font-size: clamp(1rem,2.5vw,1.2rem); */
+  font-size: clamp(1rem, 0.917rem + 0.354vi, 1.2rem);
 }
 header,
 footer {
@@ -67,31 +69,68 @@ footer {
 header {
   position: fixed;
   z-index: 10;
-}
-nav {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.nav {
+  width: 100%;
+  height: 100%;
+}
+.nav__toggle {
+  display: none;
+  font-size: 3rem;
+  color: white;
+  background-color: var(--color-primary);
+}
+.nav__menu {
+  list-style-type: none;
+  display: flex;
+  width: 100%;
+  height: 100%;
   justify-content: center;
   align-items: center;
 }
-nav a {
-  text-decoration: none;
-  color: white;
+.nav__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 100%;
 }
-nav > a > span{
-  display: inline-block;
-  padding: 20px 40px;
-}
-nav > a > span:hover {
-  transform: scale(1.3);
-  transition: 0.1s;
-}
-.nav_a {
+.nav__item.bg{
   background-color: var(--color-secondry);
 }
-.nav_a_span{
-  transform: scale(1.3);
+.nav__link {
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
 }
-
+.nav__link:hover{
+  transform: scale(1.2);
+}
+.nav__link.into{
+  transform: scale(1.2);
+}
+@media (max-width: 768px) {
+.nav__toggle{
+  display: flex;
+}
+.nav__menu{
+  display: none;
+}
+.nav__menu.isOpen{
+  display: flex;
+  flex-direction: column;
+  
+}
+}
 /* ========================= */
 /* hero */
 /* ========================= */
@@ -135,7 +174,8 @@ nav > a > span:hover {
   animation: slideIn 0.8s ease-out 1.2s both;
 }
 .hero__context > p {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 0.876rem + 0.53vi, 1.3rem);
+  line-height: clamp(1.563rem, 1.174rem + 1.657vi, 2.5rem);
   text-align: justify;
 }
 .hero__image-wrapper {
@@ -204,8 +244,8 @@ nav > a > span:hover {
 /* ========================= */
 
 .self p {
-  font-size: 1.2rem;
-  line-height: 2rem;
+  font-size: clamp(1rem, 0.876rem + 0.53vi, 1.3rem);
+  line-height: clamp(1.563rem, 1.174rem + 1.657vi, 2.5rem);
   text-align: justify;
 }
 
@@ -312,7 +352,7 @@ nav > a > span:hover {
   margin-bottom: 20px;
 }
 .experience__context p {
-  line-height: 1.5rem;
+  line-height: clamp(1.5rem, 1.293rem + 0.884vi, 2rem);
 }
 .experience__period {
   font-weight: 500;
