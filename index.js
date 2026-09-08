@@ -36,7 +36,7 @@ const nav_into = () => {
         currentlink_sapn.classList.add("nav_a_span");
       } // 不是每個區域都有對應的 nav a span 有的才新增
     },
-    { rootMargin: "-49% 0px -50% 0px" }, //觸發範圍
+    { rootMargin: "-40% 0px -60% 0px" }, //觸發範圍
   );
   sections.forEach((section) => {
     observer.observe(section);
