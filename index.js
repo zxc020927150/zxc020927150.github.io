@@ -52,12 +52,14 @@ nav_into();
 const navbar = () => {
   const toggle = document.querySelector(".nav__toggle");
   const menu = document.querySelector(".nav__menu");
-  toggle.addEventListener("click", () => {
+  const isOpen =()=>{
     menu.classList.toggle("isOpen");
     menu.classList.contains("isOpen")
       ? toggle.setAttribute("aria-expanded", true)
       : toggle.setAttribute("aria-expanded", false);
-  });
+  }
+  toggle.addEventListener("click",()=>{isOpen()});
+  menu.addEventListener('click',()=>{isOpen()})
 };
 navbar();
 
