@@ -53,6 +53,14 @@ footer {
   align-items: center;
   height: 4rem;
 }
+.test__line {
+  position: fixed;
+  width: 100%;
+  border: 1px solid red;
+  z-index: 100;
+  top: 49%;
+  bottom: 50%;
+}
 /* ========================= */
 /* header */
 /* ========================= */
@@ -68,12 +76,22 @@ nav {
 nav a {
   text-decoration: none;
   color: white;
+}
+nav > a > span{
+  display: inline-block;
   padding: 20px 40px;
 }
-nav a:hover {
+nav > a > span:hover {
   transform: scale(1.3);
   transition: 0.1s;
 }
+.nav_a {
+  background-color: var(--color-secondry);
+}
+.nav_a_span{
+  transform: scale(1.3);
+}
+
 /* ========================= */
 /* hero */
 /* ========================= */
