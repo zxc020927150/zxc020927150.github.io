@@ -12,9 +12,20 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script> //防止畫面閃爍
+      if (localStorage.getItem("theme") === "dark")
+        document.documentElement.setAttribute("data-theme", "dark");
+    </script>
   </head>
   <body>
     <header>
+      <button
+        class="data__theme"
+        aria-label="切換深色模式"
+        title="切換深色模式"
+      >
+        <i class="fa-regular fa-moon"></i>
+      </button>
       <nav class="nav">
         <ul class="nav__menu" id="nav-menu">
           <li class="nav__item">
@@ -102,94 +113,101 @@
         </p>
       </section>
       <section class="container portfolio" id="portfolio">
-        <a
-          href="https://github.com/zxc020927150/Realicious"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fa-brands fa-github"></i> 點我看更多
-        </a>
         <h2>作品集</h2>
         <div class="portfolio__wrapper">
           <div class="portfolio__image-wrapper">
             <img src="./public/Realicious.png" alt="網站截圖" />
           </div>
           <div class="portfolio__context">
-            <h3>食刻 - Realicious 美食評論網站</h3>
-            <p>
-              開發背景：本專案為 4人團隊 協作開發之前後端分離 Web 應用程式。<br />
-              主要目的：提供使用者瀏覽熱門餐廳、發表食記、在線討論交流、購買電子票券、記帳，並包含完整的會員權限管理系統。
-            </p>
-            <h4>
-              我主要負責 「 會員管理系統 」與「 多人線上聊天室 」 的設計與實作：
-            </h4>
-            <ol class="portfolio__list">
-              <li>
-                會員身分驗證與安全機制：
-                <ul>
-                  <li>採用 JWT 認證機制 管理會員登入狀態與權限控管。</li>
-                  <li>使用 bcrypt 實現密碼雜湊加密，確保使用者憑證安全</li>
-                </ul>
-              </li>
-              <li>
-                即時聊天室：
-                <ul>
-                  <li>
-                    使用 Web Socket
-                    的技術做到即時訊息推播、頻道劃分、以及連線狀態管理 ( 採用
-                    Socket.io 套件 )
-                  </li>
-                </ul>
-              </li>
-              <li>
-                API 規劃與實作：
-                <ul>
-                  <li>設計完整會員系統、聊天室 API 。</li>
-                </ul>
-              </li>
-              <li>
-                資料庫 Schema 設計：
-                <ul>
-                  <li>
-                    規劃會員及聊天室相關資料表結構，並確立與其他區塊（如文章/購物）的關聯。
-                  </li>
-                </ul>
-              </li>
-              <li>
-                Prisma ORM：
-                <ul>
-                  <li>使用 Prisma 來管理資料表，並建立測試假資料 seed。</li>
-                </ul>
-              </li>
-              <li>
-                第三方登入：
-                <ul>
-                  <li>使用者可用 google 帳號進行登入</li>
-                </ul>
-              </li>
-              <li>
-                自訂大頭貼：
-                <ul>
-                  <li>可選擇預設可愛小雞圖片或是自行上傳大頭貼</li>
-                  <li>google 登入自動代入 google 帳號大頭貼</li>
-                </ul>
-              </li>
-              <li>
-                響應式網頁設計：
-                <ul>
-                  <li>負責登入頁、註冊流程、會員中心、聊天室、側邊欄的設計</li>
-                </ul>
-              </li>
-              <li>
-                email驗證：
-                <ul>
-                  <li>
-                    註冊或忘記密碼時，需驗證 email，使用 nodemailer
-                    套件發送驗證信件
-                  </li>
-                </ul>
-              </li>
-            </ol>
+            <div class="portfolio__article">
+              <h3>食刻 - Realicious 美食評論網站</h3>
+              <p>
+                開發背景：本專案為 4人團隊 協作開發之前後端分離 Web
+                應用程式。<br />
+                主要目的：提供使用者瀏覽熱門餐廳、發表食記、在線討論交流、購買電子票券、記帳，並包含完整的會員權限管理系統。
+              </p>
+              <h4>
+                我主要負責 「 會員管理系統 」與「 多人線上聊天室 」
+                的設計與實作：
+              </h4>
+              <ol class="portfolio__list">
+                <li>
+                  會員身分驗證與安全機制：
+                  <ul>
+                    <li>採用 JWT 認證機制 管理會員登入狀態與權限控管。</li>
+                    <li>使用 bcrypt 實現密碼雜湊加密，確保使用者憑證安全</li>
+                  </ul>
+                </li>
+                <li>
+                  即時聊天室：
+                  <ul>
+                    <li>
+                      使用 Web Socket
+                      的技術做到即時訊息推播、頻道劃分、以及連線狀態管理 ( 採用
+                      Socket.io 套件 )
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  API 規劃與實作：
+                  <ul>
+                    <li>設計完整會員系統、聊天室 API 。</li>
+                  </ul>
+                </li>
+                <li>
+                  資料庫 Schema 設計：
+                  <ul>
+                    <li>
+                      規劃會員及聊天室相關資料表結構，並確立與其他區塊（如文章/購物）的關聯。
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  Prisma ORM：
+                  <ul>
+                    <li>使用 Prisma 來管理資料表，並建立測試假資料 seed。</li>
+                  </ul>
+                </li>
+                <li>
+                  第三方登入：
+                  <ul>
+                    <li>使用者可用 google 帳號進行登入</li>
+                  </ul>
+                </li>
+                <li>
+                  自訂大頭貼：
+                  <ul>
+                    <li>可選擇預設可愛小雞圖片或是自行上傳大頭貼</li>
+                    <li>google 登入自動代入 google 帳號大頭貼</li>
+                  </ul>
+                </li>
+                <li>
+                  響應式網頁設計：
+                  <ul>
+                    <li>
+                      負責登入頁、註冊流程、會員中心、聊天室、側邊欄的設計
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  email驗證：
+                  <ul>
+                    <li>
+                      註冊或忘記密碼時，需驗證 email，使用 nodemailer
+                      套件發送驗證信件
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </div>
+            <a
+              class="portfolio__link"
+              href="https://github.com/zxc020927150/Realicious"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-github"></i> 點我看更多
+            </a>
           </div>
         </div>
       </section>

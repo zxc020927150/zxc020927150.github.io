@@ -1,3 +1,53 @@
+// 深色模式
+const theme = () => {
+  const button = document.querySelector(".data__theme");
+  const html = document.documentElement;
+  const icon = document.querySelector(".data__theme i");
+  const theme = localStorage.getItem("theme");
+  console.log(theme)
+  if (theme === 'dark') {
+    icon.className = "fa-regular fa-sun";
+    html.setAttribute("data-theme", "dark");
+    button.setAttribute('aria-label',"切換淺色模式")
+    button.setAttribute('title',"切換淺色模式")
+  }
+  button.addEventListener("click", () => {
+    if (html.getAttribute("data-theme") === "dark") {
+      icon.className = "fa-regular fa-moon";
+      html.removeAttribute("data-theme");
+      button.setAttribute('aria-label',"切換深色模式")
+      button.setAttribute('title',"切換深色模式")
+      localStorage.setItem("theme", "light");
+    } else {
+      icon.className = "fa-regular fa-sun";
+      html.setAttribute("data-theme", "dark");
+      button.setAttribute('aria-label',"切換淺色模式")
+      button.setAttribute('title',"切換淺色模式")
+      localStorage.setItem("theme", "dark");
+    }
+  });
+};
+theme();
+
+//漢堡選單
+const navbar = () => {
+  const toggle = document.querySelector(".nav__toggle");
+  const menu = document.querySelector(".nav__menu");
+  const isOpen = () => {
+    menu.classList.toggle("isOpen");
+    menu.classList.contains("isOpen")
+      ? toggle.setAttribute("aria-expanded", true)
+      : toggle.setAttribute("aria-expanded", false);
+  };
+  toggle.addEventListener("click", () => {
+    isOpen();
+  });
+  menu.addEventListener("click", () => {
+    isOpen();
+  });
+};
+navbar();
+
 //nav 進入到該區塊會顯示正在哪個區塊
 const nav_into = () => {
   const sections = document.querySelectorAll("section"); //觀察對象們
@@ -20,7 +70,9 @@ const nav_into = () => {
       );
       const id = current.target.id;
       // 更改字體大小
-      const current_link = document.querySelector(`.nav__item a[href="#${id}"]`); //找到正確修改對象
+      const current_link = document.querySelector(
+        `.nav__item a[href="#${id}"]`,
+      ); //找到正確修改對象
       nav__links.forEach((nav__link) => {
         nav__link.classList.remove("into");
       });
@@ -31,14 +83,12 @@ const nav_into = () => {
       nav__items.forEach((nav__item) => {
         nav__item.classList.remove("bg");
       });
-      if(current_link){
-        const current_item = current_link.closest(".nav__item")
-      if (current_item) {
-        current_item.classList.add("bg");
+      if (current_link) {
+        const current_item = current_link.closest(".nav__item");
+        if (current_item) {
+          current_item.classList.add("bg");
+        }
       }
-      }
-      
-    
     },
     { rootMargin: "-40% 0px -60% 0px" }, //觸發範圍
   );
@@ -47,21 +97,6 @@ const nav_into = () => {
   });
 };
 nav_into();
-
-//漢堡選單
-const navbar = () => {
-  const toggle = document.querySelector(".nav__toggle");
-  const menu = document.querySelector(".nav__menu");
-  const isOpen =()=>{
-    menu.classList.toggle("isOpen");
-    menu.classList.contains("isOpen")
-      ? toggle.setAttribute("aria-expanded", true)
-      : toggle.setAttribute("aria-expanded", false);
-  }
-  toggle.addEventListener("click",()=>{isOpen()});
-  menu.addEventListener('click',()=>{isOpen()})
-};
-navbar();
 
 // skill區塊效果
 const skill_show = () => {
