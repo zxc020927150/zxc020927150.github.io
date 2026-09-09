@@ -23,7 +23,7 @@
     <meta property="og:url" content="https://zxc020927150.github.io/" />
     <meta property="og:locale" content="zh_TW" />
     <link rel="canonical" href="https://zxc020927150.github.io/" />
-    <link rel="icon" href="./public/icon.png">
+    <link rel="icon" href="./public/icon.png" />
     <link rel="stylesheet" href="./index.css" />
     <link
       rel="stylesheet"
@@ -125,16 +125,51 @@
       <section class="container self" id="self">
         <h2>自我介紹</h2>
         <p>
-          我曾在餐飲業累積六年的工作經驗，這段經歷讓我培養出以使用者需求為核心的思考方式。我相信，無論是提供一份餐點或設計一個網站，最終目的都是解決使用者的需求，並帶來良好的體驗。因此，在學習前端開發的過程中，我也始終以使用者角度思考介面設計與互動流程，希望打造兼具易用性與品質的產品。<br />
+          我曾在餐飲業累積六年的工作經驗，這段經歷讓我培養出以使用者需求為核心的思考方式。我相信，無論是提供一份餐點或設計一個網站，最終目的都是解決使用者的需求，並帶來良好的體驗。因此，在學習前端開發的過程中，我也始終以使用者角度思考介面設計與互動流程，希望打造兼具易用性與品質的產品。
+        </p>
+        <br>
+        <p>
           餐飲工作也培養了我面對問題的能力。每天都可能遇到各種突發狀況，而我不只專注於當下的處理，更習慣追蹤問題成因、檢討流程並建立預防機制。我認為這與軟體開發中除錯的思維十分相似，修復
           Bug
-          只是第一步，更重要的是找出根本原因，持續優化流程與程式品質，提升系統的穩定性與效率。<br />
+          只是第一步，更重要的是找出根本原因，持續優化流程與程式品質，提升系統的穩定性與效率。
+        </p>
+        <br>
+        <p>
           轉職的過程中，我持續投入技術的學習，熟悉
           HTML/CSS/JavaScript、React、Node.js、MySQL等技術，並透過實作專案累積開發經驗。我期待將過去累積的工作態度與問題解決能力，結合軟體開發技能，成為一位能夠發現並解決使用者問題的軟體工程師。
         </p>
       </section>
       <section class="container portfolio" id="portfolio">
         <h2>作品集</h2>
+        <div class="portfolio__wrapper">
+          <div class="portfolio__image-wrapper">
+            <img
+              src="./public/icon.png"
+              alt="作品集-許呈華的個人網站附圖"
+            />
+          </div>
+          <div class="portfolio__context">
+            <div class="portfolio__article">
+              <h3>許呈華 | 個人網站</h3>
+              <dl class="portfolio__dl">
+                <dt>開發背景</dt>
+                <dd>做一個自己的介紹</dd>
+                <dt>主要目的</dt>
+                <dd> 
+                  使用基本 html、css、javascript 製作一頁式網站，加入基礎SEO，以及無障礙模式。
+                </dd>
+              </dl>
+            </div>
+            <a
+              class="portfolio__link"
+              href="https://github.com/zxc020927150/zxc020927150.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fa-brands fa-github"></i> 點我看更多
+            </a>
+          </div>
+        </div>
         <div class="portfolio__wrapper">
           <div class="portfolio__image-wrapper">
             <img
@@ -145,15 +180,16 @@
           <div class="portfolio__context">
             <div class="portfolio__article">
               <h3>食刻 - Realicious 美食評論網站</h3>
-              <p>
-                開發背景：本專案為 4人團隊 協作開發之前後端分離 Web
-                應用程式。<br />
-                主要目的：提供使用者瀏覽熱門餐廳、發表食記、在線討論交流、購買電子票券、記帳，並包含完整的會員權限管理系統。
-              </p>
-              <h4>
-                我主要負責 「 會員管理系統 」與「 多人線上聊天室 」
-                的設計與實作：
-              </h4>
+              <dl class="portfolio__dl">
+                <dt>開發背景</dt>
+                <dd>本專案為 4人團隊 協作開發之前後端分離 Web 應用程式。</dd>
+                <dt>主要目的</dt>
+                <dd>
+                  提供使用者瀏覽熱門餐廳、發表食記、在線討論交流、購買電子票券、記帳，並包含完整的會員權限管理系統。
+                </dd>
+                <dt>負責項目</dt>
+                <dd>「 會員管理系統 」與「 多人線上聊天室 」 的設計與實作</dd>
+              </dl>
               <ol class="portfolio__list">
                 <li>
                   會員身分驗證與安全機制：
@@ -246,11 +282,16 @@
               資展國際(原資策會) <br />
               第74期 前端工程師就業養成班 498小時
             </h4>
-            <p>
-              專案名稱：Realicious<br />
-              專案內容：美食評論網站，讓使用者可以發表文章評論美食，也可以在聊天室線上即時討論聊天，可購買美食商品卷<br />
-              負責項目：完整會員功能、即時線上聊天室
-            </p>
+            <dl class="experience__detail">
+              <dt>專案名稱</dt>
+              <dd>Realicious</dd>
+              <dt>專案內容</dt>
+              <dd>
+                美食評論網站，讓使用者可以發表文章評論美食，也可以在聊天室線上即時討論聊天，可購買美食商品卷
+              </dd>
+              <dt>負責項目</dt>
+              <dd>完整會員功能、即時線上聊天室</dd>
+            </dl>
           </div>
           <div class="experience__period">2026/3~2026/8（6個月）</div>
         </div>
@@ -260,12 +301,20 @@
           </div>
           <div class="experience__context">
             <h4>阿鑾快炒</h4>
-            <p>
-              公司介紹：家族經營之傳統小吃店，販售炒飯、炒麵、乾麵、滷肉飯等等中式餐點，以及家常快炒、小菜、湯品。<br />
-              工作內容：主要工作內容是食材前置處理、餐點製作、點餐收銀、服務客人等等。
-              <br />
-              擔任職務：平常在團隊裡擔任控場的角色，協助團隊在尖峰時段有效率的服務客人，提升顧客滿意度。
-            </p>
+            <dl class="experience__detail">
+              <dt>公司介紹</dt>
+              <dd>
+                家族經營之傳統小吃店，販售炒飯、炒麵、乾麵、滷肉飯等等中式餐點，以及家常快炒、小菜、湯品。
+              </dd>
+              <dt>工作內容</dt>
+              <dd>
+                主要工作內容是食材前置處理、餐點製作、點餐收銀、服務客人等等。
+              </dd>
+              <dt>擔任職務</dt>
+              <dd>
+                平常在團隊裡擔任控場的角色，協助團隊在尖峰時段有效率的服務客人，提升顧客滿意度。
+              </dd>
+            </dl>
           </div>
           <div class="experience__period">2026/3~2026/8（約1年）</div>
         </div>
@@ -279,11 +328,18 @@
           </div>
           <div class="experience__context">
             <h4>小眷村牛肉麵 昌平店</h4>
-            <p>
-              公司介紹：在台中的連鎖牛肉麵店，以眷村口味為特色，目前有四間分店<br />
-              工作內容：主要是內場食材前置處理、餐點製作，但實際上團隊是分工合作的需要互相支援，因此也需要服務客人<br />
-              擔任職務：此分店是小眷村牛肉麵的中央廚房，大部分需長時間製作的產品，會先製成半成品之後再交由分店處理，我負責中央廚房的工作，此崗位需具有責任感，以及對品質有要求。
-            </p>
+            <dl class="experience__detail">
+              <dt>公司介紹</dt>
+              <dd>在台中的連鎖牛肉麵店，以眷村口味為特色，目前有四間分店</dd>
+              <dt>工作內容</dt>
+              <dd>
+                主要是內場食材前置處理、餐點製作，但實際上團隊是分工合作的需要互相支援，因此也需要服務客人
+              </dd>
+              <dt>擔任職務</dt>
+              <dd>
+                此分店是小眷村牛肉麵的中央廚房，大部分需長時間製作的產品，會先製成半成品之後再交由分店處理，我負責中央廚房的工作，此崗位需具有責任感，以及對品質有要求。
+              </dd>
+            </dl>
           </div>
           <div class="experience__period">2021/8~2025/3（3年8個月）</div>
         </div>
@@ -293,10 +349,14 @@
           </div>
           <div class="experience__context">
             <h4>蘭城晶英酒店 百匯自助餐廳</h4>
-            <p>
-              職位：廚房助手<br />
-              工作內容：食材前置處理、餐點製作<br />
-            </p>
+            <dl class="experience__detail">
+              <dt>公司介紹</dt>
+              <dd>位於宜蘭的親子飯店，設有紅樓中餐廳、蘭城百匯自助餐廳。</dd>
+              <dt>工作內容</dt>
+              <dd>食材前置處理、餐點製作，支援紅樓中餐廳</dd>
+              <dt>擔任職務</dt>
+              <dd>曾在就學期間在此擔任實習生一年，畢業後轉正職擔任百匯亞廚廚助，在忙碌的餐期保持冷靜以及持續專注是我學到最好的技能。</dd>
+            </dl>
           </div>
           <div class="experience__period">2020/11~2021/6（8個月）</div>
         </div>
