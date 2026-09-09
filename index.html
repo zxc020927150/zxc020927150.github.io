@@ -3,7 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume</title>
+    <title>許呈華 | 個人網站</title>
+    <meta
+      name="description"
+      content="許呈華的個人網站，總之是拿來練習基本功的，使用html、Css、JavaScript製作，其他還會React、TypeScript、next.js、node.js、Express、MySQL、Git / Github，程度普通，邊看邊學。"
+    />
+    <meta name="author" content="許呈華" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="許呈華 | 個人網站" />
+    <meta
+      property="og:description"
+      content="許呈華的個人網站，總之是拿來練習基本功的，使用html、Css、JavaScript製作，其他還會React、TypeScript、next.js、node.js、Express、MySQL、Git / Github，程度普通，邊看邊學。"
+    />
+    <meta
+      property="og:image"
+      content="https://zxc020927150.github.io/public/me.jpg"
+    />
+    <meta property="og:url" content="https://zxc020927150.github.io/" />
+    <meta property="og:locale" content="zh_TW" />
+    <link rel="canonical" href="https://zxc020927150.github.io/" />
+    <link rel="icon" href="./public/icon.png">
     <link rel="stylesheet" href="./index.css" />
     <link
       rel="stylesheet"
@@ -12,7 +32,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script> //防止畫面閃爍
+    <script>
+      //防止畫面閃爍
       if (localStorage.getItem("theme") === "dark")
         document.documentElement.setAttribute("data-theme", "dark");
     </script>
@@ -116,7 +137,10 @@
         <h2>作品集</h2>
         <div class="portfolio__wrapper">
           <div class="portfolio__image-wrapper">
-            <img src="./public/Realicious.png" alt="網站截圖" />
+            <img
+              src="./public/Realicious.png"
+              alt="作品集-Realicious網站截圖"
+            />
           </div>
           <div class="portfolio__context">
             <div class="portfolio__article">
@@ -215,7 +239,7 @@
         <h2>經歷</h2>
         <div class="experience__wrapper">
           <div class="experience__image-wrapper">
-            <img src="./public/ispan.png" alt="" />
+            <img src="./public/ispan.png" alt="經歷-資展國際logo" />
           </div>
           <div class="experience__context">
             <h4>
@@ -232,7 +256,7 @@
         </div>
         <div class="experience__wrapper">
           <div class="experience__image-wrapper">
-            <img src="./public/menu.png" alt="" />
+            <img src="./public/menu.png" alt="經歷-阿鑾快炒示意圖" />
           </div>
           <div class="experience__context">
             <h4>阿鑾快炒</h4>
@@ -247,7 +271,11 @@
         </div>
         <div class="experience__wrapper">
           <div class="experience__image-wrapper">
-            <img src="./public/noodle.jpg" alt="" style="object-fit: fill" />
+            <img
+              src="./public/noodle.jpg"
+              alt="經歷-小眷村牛肉麵logo"
+              style="object-fit: fill"
+            />
           </div>
           <div class="experience__context">
             <h4>小眷村牛肉麵 昌平店</h4>
@@ -261,7 +289,7 @@
         </div>
         <div class="experience__wrapper">
           <div class="experience__image-wrapper">
-            <img src="./public/silks.jpg" alt="" />
+            <img src="./public/silks.jpg" alt="經歷-蘭城晶英酒店logo" />
           </div>
           <div class="experience__context">
             <h4>蘭城晶英酒店 百匯自助餐廳</h4>
