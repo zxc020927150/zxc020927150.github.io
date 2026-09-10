@@ -73,9 +73,15 @@ const nav_into = () => {
           ? entry
           : closest,
       );
+      sections.forEach((section)=>{
+        section.removeAttribute("aria-current")
+      })
+      console.log(current)
+      current.target.setAttribute("aria-current","true")
+
       // 取目標對象id
       const id = current.target.id;
-      
+
       // 更改字體大小
       const current_link = document.querySelector(
         `.nav__item a[href="#${id}"]`,

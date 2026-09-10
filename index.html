@@ -39,6 +39,7 @@
     </script>
   </head>
   <body>
+    <a href="#main" class="skip-link">跳到主內容</a>
     <header>
       <button
         class="data__theme"
@@ -47,7 +48,7 @@
       >
         <i class="fa-regular fa-moon"></i>
       </button>
-      <nav class="nav">
+      <nav class="nav" aria-label="主導覽">
         <ul class="nav__menu" id="nav-menu">
           <li class="nav__item">
             <a class="nav__link" href="#skill">技術</a>
@@ -64,6 +65,7 @@
         </ul>
         <button
           class="nav__toggle"
+          aria-label="主導覽選單"
           aria-expanded="false"
           aria-controls="nav-menu"
         >
@@ -71,14 +73,14 @@
         </button>
       </nav>
     </header>
-    <main>
+    <main id="main">
       <section class="hero" id="hero">
         <div class="hero__container">
           <div class="hero__context">
-            <h3>你好 我是</h3>
+            <p>你好 我是</p>
             <h1>許呈華</h1>
-            <h2>前端工程師</h2>
-            <p>
+            <p class="hero__subtitle">前端工程師</p>
+            <p class="hero__introduction">
               在餐飲業有六年的工作經驗，想要學習新的知識，轉換跑道，於是參加資展國際(原資策會)前端工程師就業養成班，完成共498小時的課程，掌握了
               HTML、CSS、Tailwind
               CSS、RWD、JavaScript、TypeScript、React.js、Next.js(App
@@ -87,12 +89,12 @@
             </p>
           </div>
           <div class="hero__image-wrapper">
-            <img class="hero__avatar" src="./public/me.jpg" alt="大頭貼" />
+            <img class="hero__avatar" src="./public/me.jpg" width="400" height="533" alt="許呈華的大頭貼"  />
           </div>
         </div>
       </section>
-      <section class="container skill" id="skill">
-        <h2>技術</h2>
+      <section class="container skill" id="skill" aria-labelledby="skill-title">
+        <h2 id="skill-title">技術</h2>
         <div class="skill__wrapper">
           <div class="skill__card">
             <h3>前端</h3>
@@ -122,8 +124,8 @@
           </div>
         </div>
       </section>
-      <section class="container self" id="self">
-        <h2>自我介紹</h2>
+      <section class="container self" id="self" aria-labelledby="self-title">
+        <h2 id="self-title">自我介紹</h2>
         <p>
           我曾在餐飲業累積六年的工作經驗，這段經歷讓我培養出以使用者需求為核心的思考方式。我相信，無論是提供一份餐點或設計一個網站，最終目的都是解決使用者的需求，並帶來良好的體驗。因此，在學習前端開發的過程中，我也始終以使用者角度思考介面設計與互動流程，希望打造兼具易用性與品質的產品。
         </p>
@@ -139,13 +141,16 @@
           HTML/CSS/JavaScript、React、Node.js、MySQL等技術，並透過實作專案累積開發經驗。我期待將過去累積的工作態度與問題解決能力，結合軟體開發技能，成為一位能夠發現並解決使用者問題的軟體工程師。
         </p>
       </section>
-      <section class="container portfolio" id="portfolio">
-        <h2>作品集</h2>
+      <section class="container portfolio" id="portfolio" aria-labelledby="portfolio-title">
+        <h2 id="portfolio-title">作品集</h2>
         <div class="portfolio__wrapper">
           <div class="portfolio__image-wrapper">
             <img
               src="./public/icon.png"
               alt="作品集-許呈華的個人網站附圖"
+              loading="lazy"
+              width="512"
+              height="512"
             />
           </div>
           <div class="portfolio__context">
@@ -173,8 +178,11 @@
         <div class="portfolio__wrapper">
           <div class="portfolio__image-wrapper">
             <img
-              src="./public/Realicious.png"
-              alt="作品集-Realicious網站截圖"
+              src="./public/Realicious.jpg"
+              alt="作品集-Realicious網站首頁截圖"
+              loading="lazy"
+              width="1280"
+              height="2233"
             />
           </div>
           <div class="portfolio__context">
@@ -271,17 +279,17 @@
           </div>
         </div>
       </section>
-      <section class="container experience" id="experience">
-        <h2>經歷</h2>
+      <section class="container experience" id="experience" aria-labelledby="experience-title">
+        <h2 id="experience-title">經歷</h2>
         <div class="experience__wrapper">
           <div class="experience__image-wrapper">
-            <img src="./public/ispan.png" alt="經歷-資展國際logo" />
+            <img src="./public/ispan.png" alt="這是資展國際的logo" loading="lazy" width="300" height="149"/>
           </div>
           <div class="experience__context">
-            <h4>
+            <h3>
               資展國際(原資策會) <br />
               第74期 前端工程師就業養成班 498小時
-            </h4>
+            </h3>
             <dl class="experience__detail">
               <dt>專案名稱</dt>
               <dd>Realicious</dd>
@@ -297,10 +305,10 @@
         </div>
         <div class="experience__wrapper">
           <div class="experience__image-wrapper">
-            <img src="./public/menu.png" alt="經歷-阿鑾快炒示意圖" />
+            <img src="./public/menu.png" alt="這是阿鑾快炒的菜單" loading="lazy" width="300" height="405"/>
           </div>
           <div class="experience__context">
-            <h4>阿鑾快炒</h4>
+            <h3>阿鑾快炒</h3>
             <dl class="experience__detail">
               <dt>公司介紹</dt>
               <dd>
@@ -322,12 +330,15 @@
           <div class="experience__image-wrapper">
             <img
               src="./public/noodle.jpg"
-              alt="經歷-小眷村牛肉麵logo"
+              alt="這是小眷村牛肉麵的logo示意圖"
               style="object-fit: fill"
+              loading="lazy"
+              width="300"
+              height="300"
             />
           </div>
           <div class="experience__context">
-            <h4>小眷村牛肉麵 昌平店</h4>
+            <h3>小眷村牛肉麵 昌平店</h3>
             <dl class="experience__detail">
               <dt>公司介紹</dt>
               <dd>在台中的連鎖牛肉麵店，以眷村口味為特色，目前有四間分店</dd>
@@ -345,10 +356,10 @@
         </div>
         <div class="experience__wrapper">
           <div class="experience__image-wrapper">
-            <img src="./public/silks.jpg" alt="經歷-蘭城晶英酒店logo" />
+            <img src="./public/silks.jpg" alt="這是蘭城晶英酒店的logo" loading="lazy" width="127" height="127"/>
           </div>
           <div class="experience__context">
-            <h4>蘭城晶英酒店 百匯自助餐廳</h4>
+            <h3>蘭城晶英酒店 百匯自助餐廳</h3>
             <dl class="experience__detail">
               <dt>公司介紹</dt>
               <dd>位於宜蘭的親子飯店，設有紅樓中餐廳、蘭城百匯自助餐廳。</dd>
