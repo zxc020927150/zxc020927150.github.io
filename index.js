@@ -44,9 +44,14 @@ const navbar = () => {
   });
   // 點擊link會關掉選單
   links.forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (e) => {
       menu.classList.remove("isOpen");
       toggle.setAttribute("aria-expanded", false);
+
+      // 順便在這裡清除網址#
+      e.preventDefault();
+      const id = link.getAttribute("href").slice(1);
+      document.getElementById(id).scrollIntoView();
     });
   });
 };
@@ -61,9 +66,7 @@ const nav_into = () => {
   const observer = new IntersectionObserver(
     (entries) => {
       //篩選有進入的區塊，可能有多個，都沒進入，就不處理
-      const visible = entries.filter(
-        (entry) => entry.isIntersecting, 
-      );
+      const visible = entries.filter((entry) => entry.isIntersecting);
       if (visible.length === 0) return;
 
       //同時進入多個的話，挑「頂端最靠近 0」的那一個當作目前所在區塊 (取絕對值最小)
@@ -73,11 +76,11 @@ const nav_into = () => {
           ? entry
           : closest,
       );
-      sections.forEach((section)=>{
-        section.removeAttribute("aria-current")
-      })
-      console.log(current)
-      current.target.setAttribute("aria-current","true")
+      sections.forEach((section) => {
+        section.removeAttribute("aria-current");
+      });
+      console.log(current);
+      current.target.setAttribute("aria-current", "true");
 
       // 取目標對象id
       const id = current.target.id;
@@ -85,7 +88,7 @@ const nav_into = () => {
       // 更改字體大小
       const current_link = document.querySelector(
         `.nav__item a[href="#${id}"]`,
-      ); 
+      );
       nav__links.forEach((nav__link) => {
         nav__link.classList.remove("into");
       });
